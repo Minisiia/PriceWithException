@@ -1,5 +1,7 @@
 package price;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
@@ -20,6 +22,12 @@ public class Main {
             scanner.nextLine(); // зчитування переходу на новий рядок
             arrayProduct[i] = new Price(myProductName, myShopName, myPrice);
         }
+        System.out.println("Сортування масиву по назві магазину:");
+        Arrays.sort(arrayProduct, Comparator.comparing(Price::getShopName));
+        for (int i = 0; i < arrayProduct.length; i++) {
+            System.out.println(arrayProduct[i]);
+        }
+
         System.out.println("Введіть назву магазину :");
         String currentShopName = scanner.nextLine();
         Price findingShopName = new Price();
@@ -32,7 +40,7 @@ public class Main {
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
-        } else System.out.println(findingShopName.toString());
+        } else System.out.println(findingShopName);
 
     }
 }
