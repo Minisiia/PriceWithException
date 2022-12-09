@@ -1,6 +1,6 @@
 package price;
 
-public class Price {
+public class Price implements Comparable{
     private String productName;
     private String shopName;
     private double priceHrivhia;
@@ -28,8 +28,13 @@ public class Price {
 
     @Override
     public String toString() {
-        return  "productName=" + productName +
-                ", shopName=" + shopName +
-                ", priceHrivhia=" + priceHrivhia;
+        return  "productName: " + productName +
+                ", shopName: " + shopName +
+                ", priceHrivhia:  " + priceHrivhia;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return this.shopName.compareTo(((Price)o).shopName);
     }
 }

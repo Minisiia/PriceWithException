@@ -23,7 +23,7 @@ public class Main {
             arrayProduct[i] = new Price(myProductName, myShopName, myPrice);
         }
         System.out.println("Сортування масиву по назві магазину:");
-        Arrays.sort(arrayProduct, Comparator.comparing(Price::getShopName));
+        Arrays.sort(arrayProduct);
         for (int i = 0; i < arrayProduct.length; i++) {
             System.out.println(arrayProduct[i]);
         }
